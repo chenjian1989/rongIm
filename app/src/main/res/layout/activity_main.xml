@@ -1,0 +1,39 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <Button 
+        android:id="@+id/btn_connect"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:text="客户端连接"/>
+
+    <Button
+        android:id="@+id/btn_faqi"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:text="发起对话"/>
+    
+    
+    <Button 
+        android:id="@+id/btn_list"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:text="对话列表"/>
+
+    <Button
+        android:id="@+id/btn_service"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:layout_marginTop="100dp"
+        android:text="服务端"/>
+
+    <Button
+        android:id="@+id/btn_connect_huang"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:visibility="gone"
+        android:text="服务端连接"/>
+
+</LinearLayout>
