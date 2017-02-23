@@ -1,5 +1,7 @@
 package com.rong.hvming;
 
+import android.util.Log;
+
 import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
@@ -47,6 +49,8 @@ public class WakeThread extends Thread {
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
+            LogUtil.e("开机广播发送成功!");
+
             if (datagramSocket != null)
                 datagramSocket.close();
         }

@@ -1,16 +1,15 @@
 
 package com.rong.hvming;
 
-import io.rong.imkit.RongIM;
-import io.rong.imlib.RongIMClient;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+
+import io.rong.imkit.RongIM;
+import io.rong.imlib.RongIMClient;
 
 public class MainActivity extends Activity {
 
@@ -81,14 +80,16 @@ public class MainActivity extends Activity {
                 if (RongIM.getInstance() != null) {
                     if (isChenjian) {
                         RongIM.getInstance().startPrivateChat(MainActivity.this,
-                                huangzhouId, "对话");
+                                huangzhouId, "小号");
                     } else {
                         RongIM.getInstance().startPrivateChat(MainActivity.this,
-                                chenjianId, "对话");
+                                chenjianId, "邦德");
                     }
                 }
             }
         });
+
+        App.getInstance().CheckVersion(MainActivity.this);
     }
 
     private void connect(String token) {
@@ -105,7 +106,7 @@ public class MainActivity extends Activity {
                 @Override
                 public void onTokenIncorrect() {
 
-                    Log.e("LoginActivity", "--onTokenIncorrect");
+                    LogUtil.e("RongIM.connect--onTokenIncorrect");
                 }
 
                 /**
@@ -115,7 +116,7 @@ public class MainActivity extends Activity {
                  */
                 @Override
                 public void onSuccess(String userid) {
-                    Log.e("LoginActivity", "--onSuccess:   " + userid);
+                    LogUtil.e("RongIM.connect--onSuccess:   " + userid);
                     if (RongIM.getInstance() != null) {
                         // 设置自己发出的消息监听器。
                         RongIM.getInstance().setSendMessageListener(new MySendMessageListener());
@@ -129,7 +130,7 @@ public class MainActivity extends Activity {
                  */
                 @Override
                 public void onError(RongIMClient.ErrorCode errorCode) {
-                    Log.e("LoginActivity", "--onError" + errorCode);
+                    LogUtil.e("RongIM.connect--onError" + errorCode);
                 }
             });
         }
@@ -144,5 +145,11 @@ public class MainActivity extends Activity {
         i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         i.addCategory(Intent.CATEGORY_HOME);
         startActivity(i);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        LogUtil.e("MainActivity--onDestroy()");
     }
 }

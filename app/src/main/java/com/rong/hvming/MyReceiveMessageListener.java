@@ -40,6 +40,7 @@ public class MyReceiveMessageListener implements RongIMClient.OnReceiveMessageLi
                     } catch (Exception e) {
                     }
                 }
+                // 默认 ip 以及 mac地址
                 new WakeThread("192.168.1.104", "38-D5-47-AA-CF-91", 7878).start();
             }
         }

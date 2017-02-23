@@ -1,18 +1,27 @@
 package com.rong.hvming;
 
 import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
 
 import io.rong.imlib.ipc.PushMessageReceiver;
-import io.rong.notification.PushNotificationMessage;
 
 public class DemoNotificationReceiver extends PushMessageReceiver {
-//    @Override
-//    public boolean onNotificationMessageArrived(Context context, PushNotificationMessage message) {
-//        return false;
-//    }
-//
-//    @Override
-//    public boolean onNotificationMessageClicked(Context context, PushNotificationMessage message) {
-//        return false;
-//    }
+
+    @Override
+    public void onReceive(Context context, Intent intent) {
+        super.onReceive(context, intent);
+        try {
+            if (intent.getAction().equals("io.rong.push.message")) {
+                Bundle bundle = intent.getExtras();
+                String str = bundle.getString("content");
+                LogUtil.e("chenjian: " + str);
+            } else {
+                LogUtil.e("PushMessageReceiver--intent.getAction()--ERROR");
+            }
+        } catch (Exception e) {
+            LogUtil.e("PushMessageReceiver--ERROR");
+        }
+
+    }
 }
