@@ -10,7 +10,7 @@ public class DemoNotificationReceiver extends PushMessageReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
-        super.onReceive(context, intent);
+        //super.onReceive(context, intent);
         try {
             if (intent.getAction().equals("io.rong.push.message")) {
                 Bundle bundle = intent.getExtras();

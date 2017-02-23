@@ -36,15 +36,15 @@ public class App extends Application {
     private Toast mToast;
 
     /**
-     * MyApplication单例对象
+     * App单例对象
      */
     private static App mInstance;
 
     /**
-     * 获取MyApplication单例
+     * 获取App单例
      * <p/>
      *
-     * @return MyApplication
+     * @return App
      */
     public static App getInstance() {
         return mInstance;

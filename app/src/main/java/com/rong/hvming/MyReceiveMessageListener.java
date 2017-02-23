@@ -34,14 +34,14 @@ public class MyReceiveMessageListener implements RongIMClient.OnReceiveMessageLi
                         int lport = Integer.parseInt(str[3]);
                         if (lport > 0) {
                             Log.e("文本消息", "开机格式正确!");
-                            new WakeThread(str[1], str[2], lport).start();
+                            new WakeThread(str[1], str[2], lport, message.getSenderUserId()).start();
                             return false;
                         }
                     } catch (Exception e) {
                     }
                 }
                 // 默认 ip 以及 mac地址
-                new WakeThread("192.168.1.104", "38-D5-47-AA-CF-91", 7878).start();
+                new WakeThread("192.168.1.104", "38-D5-47-AA-CF-91", 7878, message.getSenderUserId()).start();
             }
         }
         return false;

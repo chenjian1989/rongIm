@@ -1,7 +1,5 @@
 package com.rong.hvming;
 
-import android.util.Log;
-
 import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
@@ -9,15 +7,22 @@ import java.net.InetAddress;
 import java.net.SocketException;
 import java.net.UnknownHostException;
 
+import io.rong.imlib.RongIMClient;
+import io.rong.imlib.model.Conversation;
+import io.rong.imlib.model.Message;
+import io.rong.message.TextMessage;
+
 public class WakeThread extends Thread {
     String ip = null;
     String macAddr = null;
     int port;
+    String mid;
 
-    public WakeThread(String ip, String macAddr, int port) {
+    public WakeThread(String ip, String macAddr, int port, String id) {
         this.ip = ip;
         this.macAddr = macAddr;
         this.port = port;
+        this.mid = id;
     }
 
     @Override
@@ -50,6 +55,26 @@ public class WakeThread extends Thread {
             e.printStackTrace();
         } finally {
             LogUtil.e("开机广播发送成功!");
+            TextMessage textMessage = TextMessage.obtain("广播发送成功");
+            Message message = Message.obtain(mid, Conversation.ConversationType.PRIVATE, textMessage);
+            RongIMClient.getInstance().sendMessage(message, "广播发送成功", "广播发送成功"
+                    , new RongIMClient.SendImageMessageCallback() {
+                @Override
+                public void onAttached(Message message) {
+                }
+
+                @Override
+                public void onError(Message message, RongIMClient.ErrorCode errorCode) {
+                }
+
+                @Override
+                public void onSuccess(Message message) {
+                }
+
+                @Override
+                public void onProgress(Message message, int i) {
+                }
+            });
 
             if (datagramSocket != null)
                 datagramSocket.close();
