@@ -13,32 +13,13 @@ import io.rong.imlib.RongIMClient;
 
 public class MainActivity extends Activity {
 
-//    public static final String chenjianId = "491db673-e4c5-4f5e-8704-0033a3408acf";
-//    private static final String token = "R6Ur/VRJrSkX5VfRkr4qofZPzbyLS2kLpjlNCK7pbaz2vBympLKGPE3Lz2bzy/KlbBVIq" +
-//            "/Tz800RqEbt9jR5VinMn6iC47zYlpe3SFc3R6MoDNjnTLPOBsQlG5ewPLTaLFlONMv0TN0=";
-//    public static final String huangzhouId = "fe33aba7-0491-4569-ad22-bd6b9b240d6e";
-//    private static final String token_huang =
-//
-// "0T1tIDL0zzSowtADyCHjVPZPzbyLS2kLpjlNCK7pbaz2vBympLKGPGd77vf2WBL8TeFLBiRFsRo0ouGRu8OJPF3UrHq2N4DmaEgIAsfTcasP8RCd
-// +Mur6zAUFdJNXqufZs9QzOVDrd8=";
-//
-//    public static final String chenjianId = "88666027-19aa-437f-8993-4d3c3af08e27";
-//    private static final String token = "9qiM1ymrK5XHYaHpQDeutj5vF9sObSgBakUFjnrhNWexNXc3kdq2Csy1UNRZ/teegp03" +
-//            "/HmEiarSdu8QlaYPTyT/3Q8pwORB377jbX3rc0oI2UBD8BAXW/RjCblwRWxmLUx+K/FOJEY=";
-//    public static final String huangzhouId = "4b9c0005-4928-4d89-b65b-02a797adba8c";
-//    private static final String token_huang =
-//            "DbUc7wlW7HcXCPRcCg3WegmLx95uJB0/sNLM+Tk9D/wh4YuJ4ayx11zpv8OwSgawueiLxVdkGXaEiKlGk3ADpq/HFsO+SNiQgr72
-// +pcD" +
-//                    "/0bDdZs81hI2F91L01W+vnMrcU9yMvwocNU=";
-
-    public static final String chenjianId = "e6020046-033d-4da5-8511-4c81cd8fc172";
-    private static final String token =
-            "FBvu9JMUS9OJslDR26Ln6H+/KT2lZJqIMMrAxmbYewbmX0RDzs7p1TU3URg1zxj0D0zrqj1lwwoVwPrIr6nU6ZUhDAq" +
-                    "+6lgvRkNrsCJlCQHtGOntU1gFuZIusLnQqumQvEL/HAINT3E=";
-    public static final String huangzhouId = "760d4f89-302f-4749-8e22-eecbb00491ba";
-    private static final String token_huang =
-            "lqKLAOf1e+30hpCOxXqB5gmLx95uJB0/sNLM+Tk9D" +
-                    "/wh4YuJ4ayx14TzOyiGRDJE2CbMz6e8JTxL1Bwe0jSmKMW9dEkZJg06Qm1ACt79Enr1t7jM1TZtfUh2UEr0QtWBzvNXeuMLWeo=";
+    public static String chenjianId = "491db673-e4c5-4f5e-8704-0033a3408acf";
+    private static String token = "R6Ur/VRJrSkX5VfRkr4qofZPzbyLS2kLpjlNCK7pbaz2vBympLKGPE3Lz2bzy/KlbBVIq" +
+            "/Tz800RqEbt9jR5VinMn6iC47zYlpe3SFc3R6MoDNjnTLPOBsQlG5ewPLTaLFlONMv0TN0=";
+    public static String huangzhouId = "fe33aba7-0491-4569-ad22-bd6b9b240d6e";
+    private static String token_huang =
+            "0T1tIDL0zzSowtADyCHjVPZPzbyLS2kLpjlNCK7pbaz2vBympLKGPGd77vf2WBL8TeFLBiRFs" +
+                    "Ro0ouGRu8OJPF3UrHq2N4DmaEgIAsfTcasP8RCd+Mur6zAUFdJNXqufZs9QzOVDrd8=";
 
     private Button mBtn_connect_huang;
 
@@ -57,6 +38,11 @@ public class MainActivity extends Activity {
         Button mBtn_list = (Button) findViewById(R.id.btn_list);
         Button mBtn_faqi = (Button) findViewById(R.id.btn_faqi);
         Button mBtn_service = (Button) findViewById(R.id.btn_service);
+        final Button mBtn_moshi1 = (Button) findViewById(R.id.btn_moshi1);
+        final Button mBtn_moshi2 = (Button) findViewById(R.id.btn_moshi2);
+        final Button mBtn_moshi3 = (Button) findViewById(R.id.btn_moshi3);
+
+        mBtn_moshi1.setTextColor(getResources().getColor(R.color.colorAccent));
 
         mBtn_service.setOnClickListener(new OnClickListener() {
             @Override
@@ -103,6 +89,55 @@ public class MainActivity extends Activity {
                                 chenjianId, "邦德");
                     }
                 }
+            }
+        });
+
+        mBtn_moshi1.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                chenjianId = "491db673-e4c5-4f5e-8704-0033a3408acf";
+                huangzhouId = "fe33aba7-0491-4569-ad22-bd6b9b240d6e";
+                token = "R6Ur/VRJrSkX5VfRkr4qofZPzbyLS2kLpjlNCK7pbaz2vBympLKGPE3Lz2bzy/KlbBVIq" +
+                        "/Tz800RqEbt9jR5VinMn6iC47zYlpe3SFc3R6MoDNjnTLPOBsQlG5ewPLTaLFlONMv0TN0=";
+                token_huang = "0T1tIDL0zzSowtADyCHjVPZPzbyLS2kLpjlNCK7pbaz2vBympLKGPGd77vf2WBL8Te" +
+                        "FLBiRFsRo0ouGRu8OJPF3UrHq2N4DmaEgIAsfTcasP8RCd+Mur6zAUFdJNXqufZs9QzOVDrd8=";
+
+                mBtn_moshi1.setTextColor(getResources().getColor(R.color.colorAccent));
+                mBtn_moshi2.setTextColor(getResources().getColor(R.color.white));
+                mBtn_moshi3.setTextColor(getResources().getColor(R.color.white));
+            }
+        });
+
+        mBtn_moshi2.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                chenjianId = "88666027-19aa-437f-8993-4d3c3af08e27";
+                huangzhouId = "4b9c0005-4928-4d89-b65b-02a797adba8c";
+                token = "9qiM1ymrK5XHYaHpQDeutj5vF9sObSgBakUFjnrhNWexNXc3kdq2Csy1UNRZ/teegp03" +
+                        "/HmEiarSdu8QlaYPTyT/3Q8pwORB377jbX3rc0oI2UBD8BAXW/RjCblwRWxmLUx+K/FOJEY=";
+                token_huang = "DbUc7wlW7HcXCPRcCg3WegmLx95uJB0/sNLM+Tk9D/wh4YuJ4ayx11zpv8OwSgawueiLxVdkGX" +
+                        "aEiKlGk3ADpq/HFsO+SNiQgr72+pcD/0bDdZs81hI2F91L01W+vnMrcU9yMvwocNU=";
+
+                mBtn_moshi2.setTextColor(getResources().getColor(R.color.colorAccent));
+                mBtn_moshi1.setTextColor(getResources().getColor(R.color.white));
+                mBtn_moshi3.setTextColor(getResources().getColor(R.color.white));
+            }
+        });
+
+        mBtn_moshi3.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                chenjianId = "e6020046-033d-4da5-8511-4c81cd8fc172";
+                huangzhouId = "760d4f89-302f-4749-8e22-eecbb00491ba";
+                token = "FBvu9JMUS9OJslDR26Ln6H+/KT2lZJqIMMrAxmbYewbmX0RDzs7p1TU3URg1zxj0D0zrqj1lwwoVwPrIr" +
+                        "6nU6ZUhDAq+6lgvRkNrsCJlCQHtGOntU1gFuZIusLnQqumQvEL/HAINT3E=";
+                token_huang =
+                        "lqKLAOf1e+30hpCOxXqB5gmLx95uJB0/sNLM+Tk9D/wh4YuJ4ayx14TzOyiGRDJE2CbMz6e8JTxL1Bwe" +
+                                "0jSmKMW9dEkZJg06Qm1ACt79Enr1t7jM1TZtfUh2UEr0QtWBzvNXeuMLWeo=";
+
+                mBtn_moshi3.setTextColor(getResources().getColor(R.color.colorAccent));
+                mBtn_moshi2.setTextColor(getResources().getColor(R.color.white));
+                mBtn_moshi1.setTextColor(getResources().getColor(R.color.white));
             }
         });
 
