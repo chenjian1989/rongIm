@@ -134,7 +134,6 @@
             android:process=":ipc" >
         </service>
         <service android:name="io.rong.imlib.ReConnectService" />
-
         <receiver android:name="io.rong.imlib.ConnectChangeReceiver" />
         <receiver android:name="io.rong.imlib.ipc.PushMessageReceiver" >
             <intent-filter>

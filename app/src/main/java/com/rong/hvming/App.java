@@ -71,7 +71,6 @@ public class App extends Application {
              * 设置用户信息提供者。
              */
             RongIM.setUserInfoProvider(new MyUserInfoProvider(), true);
-
         }
     }
 
